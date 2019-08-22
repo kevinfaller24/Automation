@@ -18,7 +18,7 @@ public class CommonHome extends BasePage {
 		inpSearch.sendKeys(product);
 	}
 	
-	public SearchResult clickSearch() {
+	public SearchResult clickSearchButton() {
 		btnSearch.click();
 		return PageFactory.initElements(driver, SearchResult.class);
 	}

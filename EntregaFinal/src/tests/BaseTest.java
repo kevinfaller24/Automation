@@ -1,0 +1,29 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import pages.CommonHome;
+
+public abstract class BaseTest {
+  
+	protected WebDriver driver;
+	protected CommonHome homePage;
+	
+  @BeforeMethod
+  public void setUp() {
+	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Edy Rod\\Desktop\\Drivers\\chromedriver_win32\\chromedriver.exe");
+	  driver= new ChromeDriver();
+	  driver.get("http://opencart.abstracta.us");
+	  homePage= PageFactory.initElements(driver, CommonHome.class);
+  }
+
+  @AfterMethod
+  public void tearDown() {
+	  driver.quit();
+  }
+
+}
