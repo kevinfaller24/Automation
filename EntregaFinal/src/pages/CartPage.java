@@ -5,16 +5,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends BasePage {
 	
 	@FindBy(how=How.XPATH, using= "//button[@class=\"btn btn-danger\"]")
 	private WebElement btnRemove;
 	private WebElement productName;
-	@FindBy(how=How.XPATH, using="//*[@id=\"content\"]//p")
+	@FindBy(how=How.CSS, using="#content p")
 	private WebElement cartEmptyMessage;
 	@FindBy (how=How.XPATH, using ="//input[starts-with(@name,\"quantity\")]")
 	private WebElement inpQuantity;
+	
+	private final String EMPTY_CART_STRING = "Your shopping cart is empty!";
 	
 	public void findProductName (String productName) {
 		this.productName= driver.findElement(By.xpath("//div[@class=\"table-responsive\"]//a[text()=\""+productName+"\"]"));
@@ -24,6 +27,7 @@ public class CartPage extends BasePage {
 	}
 	
 	public String getCartEmptyMessage() {
+		wait.until(ExpectedConditions.textToBePresentInElement(cartEmptyMessage, EMPTY_CART_STRING));
 		return cartEmptyMessage.getText();
 	}
 	public String getProductName(){
@@ -32,6 +36,7 @@ public class CartPage extends BasePage {
 	
 	public void clickRemoveButton() {
 		btnRemove.click();
+		
 	}
 	public CartPage(WebDriver driver) {
 		super(driver);
