@@ -5,10 +5,22 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 	
+	@FindBy(how=How.XPATH, using= "//div[@id=\"top-links\"]//a[@title=\"Shopping Cart\"]")
+	private WebElement cart;
+	
 	public static WebDriver driver;
+	
+	public CartPage clickCart() {
+		cart.click();
+		return PageFactory.initElements(driver, CartPage.class);
+	}
 	
 	public BasePage (WebDriver driver) {
 		BasePage.driver=driver;
@@ -30,4 +42,6 @@ public abstract class BasePage {
 	public final boolean isLoaded () {
 		return isElementPresent(this.getPageLoadLocator());
 	}
+	
+	
 }

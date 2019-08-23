@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class SearchResult extends BasePage {
 	
@@ -10,6 +11,11 @@ public class SearchResult extends BasePage {
 	
 	public void findProductName (String productName) {
 		this.productName= driver.findElement(By.xpath("//a[text()=\""+productName+"\"]"));
+	}
+	
+	public ProductPage clickProduct() {
+		productName.click();
+		return PageFactory.initElements(driver, ProductPage.class);
 	}
 	
 	public String getProductName() {
