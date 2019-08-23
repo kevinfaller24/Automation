@@ -25,6 +25,11 @@ public class ProductPage extends BasePage {
 		btnAddToCart.click();
 	}
 	
+	public void setProductQuantity(String quantity) {
+		inpQuantity.clear();
+		inpQuantity.sendKeys(quantity);
+	}
+	
 	public String getSuccessMessage() {
 		return alertSuccess.getText();
 	}
