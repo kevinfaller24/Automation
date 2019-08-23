@@ -17,6 +17,21 @@ public class ProductPage extends BasePage {
 	@FindBy (how=How.XPATH, using = "//div[@class=\"alert alert-success\"]")
 	private WebElement alertSuccess;
 	
+	public String getProductName() {
+		return productName.getText();
+	}
+	
+	public void clickAddToCart() {
+		btnAddToCart.click();
+	}
+	
+	public String getSuccessMessage() {
+		return alertSuccess.getText();
+	}
+	
+	public WebElement getSuccessAlert() {
+		return alertSuccess;
+	}
 	public ProductPage(WebDriver driver) {
 		super(driver);
 		if(!this.isLoaded()) {
