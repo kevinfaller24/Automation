@@ -29,6 +29,9 @@ public abstract class BasePage {
 		myAccount.click();
 	}
 	
+	public LoginPage clickLogin() {
+		return PageFactory.initElements(driver, LoginPage.class);
+	}
 	public CartPage clickCart() {
 		cart.click();
 		return PageFactory.initElements(driver, CartPage.class);
