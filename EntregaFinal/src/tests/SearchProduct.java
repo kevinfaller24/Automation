@@ -13,6 +13,6 @@ public class SearchProduct extends BaseTest{
 		homePage.searchProduct(product);
 		SearchResult searchPage=homePage.clickSearchButton();
 		searchPage.findProductName(product);
-		assertEquals("Product name: "+searchPage.getProductName()+"is not the expected: "+product, searchPage.getProductName(),product);
+		assertEquals("Product name: "+searchPage.getProductName()+"is not the expected: "+product, product, searchPage.getProductName());
   }
 }

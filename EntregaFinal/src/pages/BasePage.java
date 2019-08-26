@@ -15,23 +15,11 @@ public abstract class BasePage {
 	
 	@FindBy(how=How.XPATH, using= "//div[@id=\"top-links\"]//a[@title=\"Shopping Cart\"]")
 	private WebElement cart;
-	@FindBy(how=How.XPATH, using= "//div[@id=\"top-links\"]//a[@title=\"My Account\"]")
-	private WebElement myAccount;
-	@FindBy(how=How.XPATH, using= "//div[@id=\"top-links\"]//a[text()=\"Login\"]")
-	private WebElement login;
-	@FindBy(how=How.XPATH, using= "//div[@id=\"top-links\"]//a[text()=\"Logout\"]")
-	private WebElement logout;
+
 	
 	public WebDriverWait wait;
 	public static WebDriver driver;
 	
-	public void clickMyAccount() {
-		myAccount.click();
-	}
-	
-	public LoginPage clickLogin() {
-		return PageFactory.initElements(driver, LoginPage.class);
-	}
 	public CartPage clickCart() {
 		cart.click();
 		return PageFactory.initElements(driver, CartPage.class);

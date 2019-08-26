@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends BasePage {
@@ -16,6 +17,8 @@ public class CartPage extends BasePage {
 	private WebElement cartEmptyMessage;
 	@FindBy (how=How.XPATH, using ="//input[starts-with(@name,\"quantity\")]")
 	private WebElement inpQuantity;
+	@FindBy (how=How.XPATH, using ="//a[text()=\"Checkout\"]")
+	private WebElement btnCheckout;
 	
 	private final String EMPTY_CART_STRING = "Your shopping cart is empty!";
 	
@@ -37,6 +40,11 @@ public class CartPage extends BasePage {
 	public void clickRemoveButton() {
 		btnRemove.click();
 		
+	}
+	
+	public CheckoutPage clickCheckout() {
+		btnCheckout.click();
+		return PageFactory.initElements(driver, CheckoutPage.class);
 	}
 	public CartPage(WebDriver driver) {
 		super(driver);
