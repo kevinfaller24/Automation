@@ -97,5 +97,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 #Project files
-EntregaFinal/test-output/
+test-output/
 # End of https://www.gitignore.io/api/windows,eclipse
+/target/
