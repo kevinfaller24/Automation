@@ -15,7 +15,7 @@ public abstract class BaseTest {
 	
   @BeforeMethod
   public void setUp() {
-	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_linux64/chromedriver.exe");
+	  //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_linux64/chromedriver.exe");
 	  driver= new ChromeDriver();
 	  driver.get("http://opencart.abstracta.us");
 	  homePage= PageFactory.initElements(driver, CommonHome.class);
