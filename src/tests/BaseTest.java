@@ -21,9 +21,9 @@ public abstract class BaseTest {
 	  options.addArguments("--headless");
 	  options.addArguments("--no-sandbox");
 	  options.addArguments("--disable-dev-shm-usage");
-	  options.setExperimentalOption("useAutomationExtension", false);
+	//  options.setExperimentalOption("useAutomationExtension", false);
 	  driver = new ChromeDriver(options);
-	 // driver= new ChromeDriver();
+	//  driver= new ChromeDriver();
 	  driver.get("http://opencart.abstracta.us");
 	  homePage= PageFactory.initElements(driver, CommonHome.class);
   }
