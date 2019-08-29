@@ -1,4 +1,3 @@
-os: windows
 language: java
 before_install:
-- chmod +x drivers/chromedriver.exe
+- chmod +x drivers/chromedriver_linux64/chromedriver.exe
