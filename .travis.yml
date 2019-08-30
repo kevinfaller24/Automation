@@ -1,3 +1,5 @@
 language: java
 before_install:
 - chmod +x drivers/chromedriver_linux64/chromedriver
+addons:
+  chrome: stable
