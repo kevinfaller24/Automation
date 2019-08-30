@@ -17,13 +17,13 @@ public abstract class BaseTest {
 	@BeforeMethod
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "drivers//chromedriver_linux64//chromedriver");
-		ChromeOptions options = new ChromeOptions();
+		//ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
+		//options.addArguments("--no-sandbox");
+		//options.addArguments("--disable-dev-shm-usage");
 		// options.setExperimentalOption("useAutomationExtension", false);
-		driver = new ChromeDriver(options);
-		// driver= new ChromeDriver();
+		//driver = new ChromeDriver(options);
+		 driver= new ChromeDriver();
 		driver.get("http://opencart.abstracta.us");
 		homePage = PageFactory.initElements(driver, CommonHome.class);
 	}
