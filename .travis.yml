@@ -1,1 +1,4 @@
 language: java
+before_script:
+- chmod +x drivers/chromedriver_linux64/chromedriver
+- export CHROME_BIN=chromium-browser
