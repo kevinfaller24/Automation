@@ -16,7 +16,7 @@ public abstract class BaseTest {
 
 	@BeforeMethod
 	public void setUp() {
-		//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_linux64/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "drivers//chromedriver_linux64//chromedriver");
 		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
 		options.addArguments("--no-sandbox");
